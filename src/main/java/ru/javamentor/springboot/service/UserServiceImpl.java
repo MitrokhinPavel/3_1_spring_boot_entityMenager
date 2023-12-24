@@ -1,10 +1,10 @@
 package ru.javamentor.springboot.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import ru.javamentor.springboot.dao.UserDao;
 import ru.javamentor.springboot.model.User;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
