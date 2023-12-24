@@ -30,11 +30,8 @@ public class UserDaoImpl implements UserDao {
         return entityManager.find(User.class, id);
     }
     @Override
-    public User deleteUser(Long id) throws NullPointerException {
+    public User deleteUser(Long id) {
         User user = readUser(id);
-        if (null == user) {
-            throw new NullPointerException("User not found");
-        }
         entityManager.remove(user);
         return user;
     }

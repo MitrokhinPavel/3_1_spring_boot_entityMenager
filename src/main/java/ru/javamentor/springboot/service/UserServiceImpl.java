@@ -36,11 +36,11 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User deleteUser(Long id) {
-        User user = null;
-        try {
-            user = userDao.deleteUser(id);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
+        User user = userDao.readUser(id);
+        if (user != null) {
+            userDao.deleteUser(id);
+        } else {
+            System.out.println("User with id " + id + " does not exist");
         }
         return user;
     }
